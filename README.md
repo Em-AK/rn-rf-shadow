@@ -65,6 +65,47 @@ Open Emacs and a bash shell:
    Which should pop-up a modal alert in the simulator, confirming the
    app is running and the REPL is connected end to end.
 
+## Using Vim with Fireplace
+
+Follow the steps in the [Command line](#or-the-command-line) section below
+then come back here.
+
+Open a file like `src/main/example/app.cljs` in vim.
+Find the nrepl port printed by the previous watch command (here 38369) and:
+
+```
+:Connect 38369
+=>
+Connected to nrepl://localhost:38369/
+Scope connection to: ...
+(ENTER)
+```
+
+Then enter into the CLJS session:
+
+```
+:CljEval (shadow/nrepl-select :app)
+=>
+To quit, type: :cljs/quit
+[:selected :app]
+(ENTER)
+```
+
+[More explanations in the doc for shadow-cljs](https://shadow-cljs.github.io/docs/UsersGuide.html#_connecting_fireplace_vim_to_repl_server)
+
+Now enjoy fireplace commands!
+
+For example to increment the counter add this snippet in the file
+(no need to save the file):
+
+```clj
+(comment
+  (rf/dispatch [:inc-counter]))
+```
+
+Place your cursor somewhere on the "rf/dispatch" and hit `cpp`.
+The counter should be incremented on your phone.
+
 ## Or the Command line
 ```sh
 $ npm install -g expo-cli
