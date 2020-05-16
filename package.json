@@ -2,6 +2,8 @@
   "main": "app/index.js",
   "scripts": {
     "server": "shadow-cljs server",
+    "watch": "shadow-cljs watch",
+    "clean": "rm -rf ./node_modules/ ./.expo/ ./.shadow-cljs/ ./.cpcache/ ./app/",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",

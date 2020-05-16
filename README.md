@@ -69,7 +69,7 @@ Open Emacs and a bash shell:
 ```sh
 $ npm install -g expo-cli
 $ yarn
-$ shadow-cljs watch app
+$ yarn watch app
 # wait for first compile to finish or expo gets confused 
 # on another terminal tab/window:
 $ yarn start
@@ -93,7 +93,7 @@ Then use your editor of choice to hook up the REPL and such.
 
 
 ### Using ClojureScript REPL
-Once the app is deployed and opened in phone/simulator/emulator/browser, connect to the nrepl on port 9000 and run the following:
+Once the app is deployed and opened in phone/simulator/emulator/browser, connect to the nrepl on port printed by the watch command and run the following:
 ```clojure
 (shadow/nrepl-select :app)
 ```
